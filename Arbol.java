@@ -5,8 +5,6 @@ public class Arbol {
         this.raiz = new Nodo(valorRaiz);
     }
 
-    // --- MÉTODOS OBLIGATORIOS ---
-
     // Calcula la Altura del árbol
     public int getAltura(Nodo actual) {
         if (actual.hijos.isEmpty()) return 0;
@@ -27,11 +25,11 @@ public class Arbol {
         return suma;
     }
 
-    // Representación gráfica sencilla usando indentación (espacios)
+    // Representación gráfica 
 public void imprimir(Nodo nodo, int nivel) {
     if (nodo == null) return;
 
-    // Creamos la sangría (indentación) según el nivel de profundidad
+    // se crea el orden la altura
     for (int i = 0; i < nivel; i++) {
         System.out.print("   "); // 3 espacios por cada nivel
     }
@@ -39,7 +37,7 @@ public void imprimir(Nodo nodo, int nivel) {
     // Imprimimos el dato con un guion para marcar que es un nodo
     System.out.println("|-- " + nodo.dato);
 
-    // Llamada recursiva para los hijos, aumentando el nivel
+    // llamamos los hijos y aumneta el nivel
     for (Nodo hijo : nodo.hijos) {
         imprimir(hijo, nivel + 1);
     }
